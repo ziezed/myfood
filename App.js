@@ -25,7 +25,26 @@ const App: () => React$Node = () => {
     <NavigationContainer>
       {/* <Header title='Halaman Utama' /> */}
 
-      <Tab.Navigator>        
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Main') {
+              iconName = focused
+                ? 'android'
+                : 'android';
+            } else if (route.name === 'Food') {
+              iconName = focused ? 'apple' : 'apple';
+            } else if (route.name === 'About') {
+              iconName = focused ? 'backward' : 'backward';
+            }
+
+            // You can return any component that you like here!
+            return <Icon name={iconName} size={size} color={color} />;
+          },
+        })}
+      >        
         <Tab.Screen name="Main" component={Home} />
         <Tab.Screen name="Food" component={Food} />
         <Tab.Screen name="About" component={About} />
