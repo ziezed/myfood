@@ -28,7 +28,7 @@ const App: () => React$Node = () => {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'Main') {
+            if (route.name === 'Home') {
               iconName = focused
                 ? 'android'
                 : 'android';
@@ -43,7 +43,7 @@ const App: () => React$Node = () => {
           },
         })}
       >        
-        <Tab.Screen name="Main" component={Home} />
+        <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Food" component={Food} />
         <Tab.Screen name="About" component={About} />
       </Tab.Navigator>
