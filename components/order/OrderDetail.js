@@ -1,16 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Header from '../Header'
 
-const Food = ({ navigation }) => {
+const OrderDetail = () => {
     return (
         <View>
-            <Header title="Food Menu" />
-            <Text>ini halaman food</Text>
+            <Text>Oreder Detail</Text>
         </View>
     )
 }
 
-export default Food
+export default OrderDetail
 
 const styles = StyleSheet.create({})
