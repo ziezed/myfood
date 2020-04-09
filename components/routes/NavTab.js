@@ -12,6 +12,17 @@ import OrderDetail from '../order/OrderDetail'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const OrderStack = createStackNavigator();
+
+const OrderStackscreen = () => {
+    return (
+        <OrderStack.Navigator >
+            <OrderStack.Screen name="Home" component={Home} options={{headerShown: false}} />
+            <OrderStack.Screen name="Order" component={Order} />
+            <OrderStack.Screen name="OrderDetail" component={OrderDetail} />
+        </OrderStack.Navigator> 
+    )
+}
 
 const NavTab = () => {
     return (
@@ -36,7 +47,7 @@ const NavTab = () => {
                 },
                 })}
             >        
-                <Tab.Screen name="Home" component={Home} />
+                <Tab.Screen name="Home" component={OrderStackscreen} />
                 <Tab.Screen name="Food" component={Food} />
                 <Tab.Screen name="Store" component={Store} />
                 <Tab.Screen name="About" component={About} />

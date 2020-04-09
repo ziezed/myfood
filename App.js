@@ -17,7 +17,7 @@ import React from 'react';
 // import Order from './components/order/Order'
 // import Home from './components/home/Home'
 import Navigator from './components/routes/NavTab';
-// import Navigator from './components/routes/OrderStack';
+// import NavigatorStack from './components/routes/OrderStack';
 
 
 

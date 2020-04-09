@@ -7,7 +7,7 @@ const Order = ({ navigation }) => {
             <Text>halaman order</Text>
             <Button
                 title="Go to Details"
-                onPress={() => navigation.navigate('OrderDetail')}
+                onPress={() => navigation.push('OrderDetail')}
             />
         </View>
     )

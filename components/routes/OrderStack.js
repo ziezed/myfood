@@ -9,12 +9,12 @@ const Stack = createStackNavigator();
 
 const OrderStack = () => {
     return (
-        // <NavigationContainer>
+        <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Order" component={Order} />
                 <Stack.Screen name="OrderDetail" component={OrderDetail} />
             </Stack.Navigator> 
-        // </NavigationContainer>
+        </NavigationContainer>
     )
 }
 

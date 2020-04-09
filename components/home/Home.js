@@ -69,7 +69,7 @@ const Home = ({ navigation }) => {
                                 name='camera'
                                 color='#be0a3b'
                                 size= {30}
-                                onPress={() => navigation.navigate('Order')}
+                                onPress={() => navigation.push('Order')}
                             />
                             <Text style={styles.iconText}>Order</Text>
                         </TouchableOpacity>
