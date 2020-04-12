@@ -6,23 +6,10 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import About from '../about/About'
 import Food from '../food/Food'
 import Store from '../store/Store'
-import Home from '../home/Home'
-import Order from '../order/Order'
-import OrderDetail from '../order/OrderDetail'
+import OrderStackscreen from './OrderStack'
+
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-const OrderStack = createStackNavigator();
-
-const OrderStackscreen = () => {
-    return (
-        <OrderStack.Navigator >
-            <OrderStack.Screen name="Home" component={Home} options={{headerShown: false}} />
-            <OrderStack.Screen name="Order" component={Order} />
-            <OrderStack.Screen name="OrderDetail" component={OrderDetail} />
-        </OrderStack.Navigator> 
-    )
-}
 
 const NavTab = () => {
     return (

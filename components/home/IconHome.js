@@ -41,7 +41,7 @@ const IconHome = ({ navigation }) => {
                         name='camera'
                         color='#be0a3b'
                         size= {30}
-                        // onPress={() => navigation.navigate('Order')}
+                        onPress={() => navigation.navigate('Order')}
                     />
                     <Text style={styles.iconText}>Order</Text>
                 </TouchableOpacity>
