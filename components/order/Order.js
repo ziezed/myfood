@@ -1,51 +1,44 @@
-import React, {useState} from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native'
+import React, {useState, useEffect} from 'react'
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native'
 import axios from "axios";
 
-// function ambilData(){
-//         const [food, setFood] = useState(null)
+const Order = () => {
 
-//         axios.get('http://localhost:1337/foods/1')
-//             .then(response => {setFood (response.data)})
+    const [data, setData] = useState([]);
 
-//         let fruit = [
-//             {nama: "roni", umur: 28},
-//             {nama: "joni", umur: 33},
-//             {nama: "eni", umur : 30}            
-//             ]
-//     return(
-//         // a = 55 + 3
-//         // fruit
-//         food
-//     );
-// }
+    // const klik =() => {
+    //     setData([
+    //             {id: '6', nama: 'wahyu1'},
+    //             {id: '7', nama: 'wahyu2'},
+    //             {id: '8', nama: 'wahyu3'},
+    //     ])  
+    // }
 
-const Order = ({ navigation }) => {
+    useEffect(() => {
+        axios.get(`http://192.168.108.244:1337/foods`)
+            .then(res => {
+                const foods = res.data;
+                // console.log(foods);
+                setData( foods );
+            })
+            .catch(error => console.log(error));
+    },[])
 
-    const [food, setFood] = useState(null)
-
-    axios.get('http://localhost:1337/foods')
-            .then(response => {setFood (response.data)})
     return (
         <View>
             <Text>halaman order</Text>
             <Button
                 title="Go to Details"
-                onPress={() => navigation.push('OrderDetail')}
+                onPress={() => klik() }
             />
 
-            <Text>Adjust the color in a way that looks standard on each platform. 
-            On iOS, the color prop controls the color of the text. On Android, 
-            the color adjusts the background color of the button. </Text>
-
-            <Button 
-                title="Console"
-                onPress={() => console.log(food)}
+            <FlatList    
+                keyExtractor={(item) => item.id.toString()}                            
+                data={data}
+                renderItem={({ item }) => (<Text>{item.nama}</Text>)}                                
             />
         </View>
     )
 }
 
 export default Order
-
-const styles = StyleSheet.create({})

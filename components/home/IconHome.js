@@ -1,8 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { Icon } from 'react-native-elements'
-// import Order from '../components/order/Order'
-
 
 const IconHome = ({ navigation }) => {
     return (
@@ -15,8 +13,7 @@ const IconHome = ({ navigation }) => {
                         name='restaurant'
                         color='#be0a3b'
                         size= {30}
-                        // onPress={() => navigation.navigate('Food')}
-                        onPress={() => console.log(navigation)}
+                        onPress={() => navigation.navigate('Food')}
                     />
                     <Text style={styles.iconText}>Food</Text>
                 </TouchableOpacity>
@@ -29,6 +26,7 @@ const IconHome = ({ navigation }) => {
                         name='store'
                         color='#be0a3b'
                         size= {30}
+                        onPress={() => navigation.navigate('Store')}
                     />
                     <Text style={styles.iconText}>Store</Text>
                 </TouchableOpacity>

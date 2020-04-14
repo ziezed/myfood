@@ -1,22 +1,35 @@
-import React, {useState} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, {useState, useEffect} from 'react'
+import { StyleSheet, Text, View, FlatList, SafeAreaView } from 'react-native'
+import axios from 'axios';
 
 const ListFood = () => {
-    const [food, setFood] = useState([
-        {nama: 'RM Padang', key: '1'},
-        {nama: 'Toko Roti', key: '2'},
-        {nama: 'Kebab Enak', key: '3'},
-        {nama: 'Pizza Hut', key: '4'},
-        {nama: 'Buah Segar', key: '5'},
-        {nama: 'Sate Madura', key: '6'},
-        {nama: 'Asam Pedas', key: '7'},
-    ]);
+    const [food, setFood] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://192.168.108.244:1337/foods`)
+            .then(res => {
+                const makanan = res.data;
+                // console.log(foods);
+                setFood( makanan );
+            })
+            .catch(error => console.log(error));
+    },[])
+
+    
 
     return (
         <View style={styles.container}>
+            {/* tidak bisa gunakan flatlist karena tidak bisa flatlist didalam scrollview */}
+            {/* <FlatList    
+                nestedScrollEnabled={true}
+                keyExtractor={(item) => item.id.toString()}                            
+                data={food}
+                renderItem={({ item }) => (<Text style={styles.item}>{item.nama}</Text>)}                           
+            /> */}
+
             {food.map((item) => {
                 return(
-                    <View key={item.key}>
+                    <View key={item.id}>
                         <Text style={styles.item}>{item.nama}</Text>
                     </View>
                 )
@@ -29,6 +42,7 @@ export default ListFood
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingHorizontal: 20
     },
     item: {
