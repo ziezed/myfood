@@ -3,14 +3,14 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
 import { Card, Button} from 'react-native-elements'
 import Header from '../Header'
 import IconHome from './IconHome'
-import ListFood from './ListFood'
+import ListHome from './ListHome'
 
 const Home = ({ navigation }) => {
         
     return (
         <SafeAreaView>
             <ScrollView>
-                <Header title="MY Send Mart" />
+                <Header title="OneJek & mall" />
 
                 <Card
                     // title='HELLO WORLD'
@@ -21,17 +21,17 @@ const Home = ({ navigation }) => {
                     <Button
                         // icon={<Icon name='code' color='#ffffff' />}
                         buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                        title='Lebih Jauh dengan MYJEK' onPress={() => navigation.navigate('About')} />
+                        title='Lebih Jauh dengan OneJek' onPress={() => navigation.navigate('About')} />
                 </Card>
 
                 <IconHome navigation={navigation} />                
 
                 <View style={styles.pilihanView}>
-                    <Text style={{fontSize: 22}}>Rumah Makan Pilihan</Text>
-                    <Text style={{fontSize: 16}}>Diisni anda akan mendapatkan bonus setiap kali order</Text>
+                    <Text style={{fontSize: 20}}>Kebutuhan Rumah Tangga Anda</Text>
+                    <Text style={{fontSize: 14}}>Untuk Daftar barang Lebih Lengkapnya Silahkan Klik Mart</Text>
                 </View>
 
-                <ListFood />
+                <ListHome />
 
             </ScrollView>
         </SafeAreaView>
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
     
     pilihanView: {
         paddingTop: 30,
-        paddingLeft: 30,
+        marginHorizontal: 20
+        // paddingLeft: 30,
+        // paddingRight: 30,
+
     }
 })

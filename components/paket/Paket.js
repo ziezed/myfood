@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native'
 import axios from "axios";
 
-const Order = () => {
+const Paket = ({ navigation }) => {
 
     const [data, setData] = useState([]);
 
@@ -26,10 +26,10 @@ const Order = () => {
 
     return (
         <View>
-            <Text>halaman order</Text>
+            <Text>halaman Paket</Text>
             <Button
                 title="Go to Details"
-                onPress={() => klik() }
+                onPress={() => navigation.navigate('PaketDetail')}
             />
 
             <FlatList    
@@ -41,4 +41,4 @@ const Order = () => {
     )
 }
 
-export default Order
+export default Paket

@@ -7,7 +7,7 @@ const About = ({ navigation }) => {
     return (
         <View>
             <Header title="Tentang Kami" />
-            
+                        
             <Card
                 title='Unimaginable Service'
                 image={require('../images/solid.jpg')}>

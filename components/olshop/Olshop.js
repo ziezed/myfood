@@ -4,18 +4,16 @@ import axios from "axios";
 
 const Food = ({ navigation }) => {
 
-    const [resto, setResto] = useState([]);
+    const [olshop, setOlshop] = useState([]);
  
     useEffect(() => {
-        setResto([
-            {nama: 'Sate Madura', alamat: 'jl. Riau Ujung', gambar: require('../images/resto/sate.jpg'), id: '1'},
-            {nama: 'Rumah asam Pedas', alamat: 'jl. Sumatra', gambar: require('../images/resto/asampedas.jpg'), id: '2'},
-            {nama: 'R M Padang', alamat: 'jl. Kenari gg. lucu', gambar: require('../images/resto/rmpadang.jpg'), id: '3'},
-            {nama: 'Cafe Gaulll', alamat: 'jl. Semangka', gambar: require('../images/resto/cafegaul.jpg'), id: '4'},
-            {nama: 'Roti Bakar Enak', alamat: 'jl. Datuk Laksemana', gambar: require('../images/resto/rotibakar.jpg'), id: '5'},
-            {nama: 'Cafe Jus Dumai', alamat: 'jl. Sudirman', gambar: require('../images/resto/cafejus.jpg'), id: '6'},
-            {nama: 'Warkop capuchino', alamat: 'jl. Sutan Syarif Qasim', gambar: require('../images/resto/warkop.jpg'), id: '7'},
-            {nama: 'Rumah Makan Lezat', alamat: 'jl. Purnama', gambar: require('../images/resto/rmlezat.jpg'), id: '8'},
+        setOlshop([
+            {nama: 'Kosmetik Ceria', alamat: 'jl. Riau Ujung', gambar: require('../images/olshop/kosmetik1.jpg'), id: '1'},
+            {nama: 'Toko Obat Sehat', alamat: 'jl. Sumatra', gambar: require('../images/olshop/kosmetik2.jpg'), id: '2'},
+            {nama: 'Kios Oleh2', alamat: 'jl. Kenari gg. lucu', gambar: require('../images/olshop/oleh21.jpg'), id: '3'},
+            {nama: 'Rumah Pengrajin', alamat: 'jl. Semangka', gambar: require('../images/olshop/oleh22.jpg'), id: '4'},
+            {nama: 'Toko Rotan', alamat: 'jl. Datuk Laksemana', gambar: require('../images/olshop/rotan1.jpg'), id: '5'},
+            {nama: 'Rotan Indah', alamat: 'jl. Sudirman', gambar: require('../images/olshop/rotan2.jpg'), id: '6'},
         ])  
     },[])
 
@@ -25,9 +23,9 @@ const Food = ({ navigation }) => {
             <FlatList
                 contentContainerStyle={{ paddingBottom: 20}}    
                 keyExtractor={(item) => item.id.toString()}                            
-                data={resto}
+                data={olshop}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('FoodDetail', item) } >
+                    <TouchableOpacity onPress={() => navigation.navigate('OlshopDetail', item) } >
                         <View style={styles.card}>
                             <View style={styles.item}>
                                 <Image style={styles.gambarItem} source={item.gambar} />                            

@@ -13,9 +13,9 @@ const IconHome = ({ navigation }) => {
                         name='restaurant'
                         color='#be0a3b'
                         size= {30}
-                        onPress={() => navigation.navigate('Food')}
+                        onPress={() => navigation.navigate('Mart')}
                     />
-                    <Text style={styles.iconText}>Food</Text>
+                    <Text style={styles.iconText}>Mart</Text>
                 </TouchableOpacity>
             </View>
             <View>
@@ -26,9 +26,9 @@ const IconHome = ({ navigation }) => {
                         name='store'
                         color='#be0a3b'
                         size= {30}
-                        onPress={() => navigation.navigate('Store')}
+                        onPress={() => navigation.navigate('Food')}
                     />
-                    <Text style={styles.iconText}>Store</Text>
+                    <Text style={styles.iconText}>Food</Text>
                 </TouchableOpacity>
             </View>
             <View>
@@ -39,9 +39,9 @@ const IconHome = ({ navigation }) => {
                         name='camera'
                         color='#be0a3b'
                         size= {30}
-                        onPress={() => navigation.navigate('Order')}
+                        onPress={() => navigation.navigate('Olshop')}
                     />
-                    <Text style={styles.iconText}>Order</Text>
+                    <Text style={{paddingLeft: 15}}>OLshop</Text>
                 </TouchableOpacity>
             </View>
             <View>
@@ -52,9 +52,9 @@ const IconHome = ({ navigation }) => {
                         name='pets'
                         color='#be0a3b'
                         size= {30}
-                        onPress={() => navigation.navigate('About')}
+                        onPress={() => navigation.navigate('Paket')}
                     />
-                    <Text style={styles.iconText}>About</Text>
+                    <Text style={styles.iconText}>Paket</Text>
                 </TouchableOpacity>
             </View>            
         </View>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     iconContainer: {
         flexDirection: "row", 
         justifyContent: 'space-around',
-        paddingTop: 30
+        paddingTop: 30,
     },
      iconText: {
         paddingLeft: 23

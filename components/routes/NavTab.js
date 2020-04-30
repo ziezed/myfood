@@ -4,9 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import About from '../about/About'
-import Food from '../food/Food'
-import Store from '../store/Store'
-import OrderStackscreen from './OrderStack'
+import ListOrder from '../listOrder/ListOrder'
+import History from '../history/History'
+import Profile from '../profile/Profile'
+import ScreenStack from './ScreenStack'
 
 
 const Tab = createBottomTabNavigator();
@@ -21,11 +22,11 @@ const NavTab = () => {
 
                     if (route.name === 'Home') {
                     iconName = focused ? 'android' : 'android';
-                    } else if (route.name === 'Food') {
+                    } else if (route.name === 'ListOrder') {
                     iconName = focused ? 'apple' : 'apple';
-                    } else if (route.name === 'Store') {
+                    } else if (route.name === 'History') {
                     iconName = focused ? 'shopping-cart' : 'shopping-cart';
-                    } else if (route.name === 'About') {
+                    } else if (route.name === 'Profile') {
                     iconName = focused ? 'heart' : 'heart';
                     }
 
@@ -34,10 +35,10 @@ const NavTab = () => {
                 },
                 })}
             >        
-                <Tab.Screen name="Home" component={OrderStackscreen} />
-                <Tab.Screen name="Food" component={Food} />
-                <Tab.Screen name="Store" component={Store} />
-                <Tab.Screen name="About" component={About} />
+                <Tab.Screen name="Home" component={ScreenStack} />
+                <Tab.Screen name="ListOrder" component={ListOrder} />
+                <Tab.Screen name="History" component={History} />
+                <Tab.Screen name="Profile" component={Profile} />
             </Tab.Navigator>
         </NavigationContainer>
     )

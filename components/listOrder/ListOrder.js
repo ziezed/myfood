@@ -1,14 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import Header from '../Header'
 
-const Store = () => {
+const ListOrder = () => {
     return (
         <View>
-            <Text>halaman store</Text>
+            <Header title="List Order" />
+            <Text>ini halaman List Order</Text>
         </View>
     )
 }
 
-export default Store
+export default ListOrder
 
 const styles = StyleSheet.create({})

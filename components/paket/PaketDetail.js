@@ -2,10 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 
 
-const OrderDetail = () => {
+const PaketDetail = () => {
     return (
         <View>
-            <Text>Oreder Detail</Text>
+            <Text>Paket Detail</Text>
             <Button 
                 title="Console"
                 onPress={() => console.log("testing clear")}            
@@ -14,6 +14,6 @@ const OrderDetail = () => {
     )
 }
 
-export default OrderDetail
+export default PaketDetail
 
 const styles = StyleSheet.create({})
